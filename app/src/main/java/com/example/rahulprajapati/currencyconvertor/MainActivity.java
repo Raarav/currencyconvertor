@@ -5,16 +5,20 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    EditText editText = (EditText) findViewById(R.id.edt);
-    EditText editText1 = (EditText) findViewById(R.id.et1);
+
+    EditText editText;
+    TextView editText1;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        editText = (EditText) findViewById(R.id.edt);
+        editText1 = (TextView) findViewById(R.id.et1);
 
     }
 
@@ -23,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Double dolaramount = Double.parseDouble(editText.getText().toString());
-        Double vdolar = dolaramount * 67.81;
+        Double vdolar = dolaramount / 67.81;
         editText1.setText(vdolar.toString() + "Dolars");
         Log.i("dolar", vdolar.toString());
         }
@@ -32,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Double euroamount = Double.parseDouble(editText.getText().toString());
-        Double veuro = euroamount * 78.80;
+        Double veuro = euroamount / 78.80;
         editText1.setText(veuro.toString() + "Euros");
         Log.i("euro", veuro.toString());
     }
@@ -41,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Double yenamount = Double.parseDouble(editText.getText().toString());
-        Double vyen = yenamount * 0.62;
+        Double vyen = yenamount / 0.62;
         editText1.setText(vyen.toString() + "Yens");
         Log.i("yen", vyen.toString());
     }
@@ -49,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     public void ruble(View view) {
 
         Double rubleamount = Double.parseDouble(editText.getText().toString());
-        Double vruble = rubleamount * 1.07;
+        Double vruble = rubleamount / 1.07;
         editText1.setText(vruble.toString() + "Rubles");
         Log.i("ruble", vruble.toString());
 
